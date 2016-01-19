@@ -12,8 +12,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+       
+        $(".scroll").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+        });
+      });
+    </script>
 </head>
 <body>
+
+    <a id="home" name="home"></a>
 <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top ods">
       <div class="container ods-menu">
@@ -25,6 +36,8 @@
             <ul class="nav navbar-nav">
               <li><a href="mailto:info@example.com" style="color:#333399;"><i class="fa fa-envelope fa-2x"></i></a></li>
               <li><a href="#" style="color:#333399;"><i class="fa fa-phone fa-2x"></i> +30 211 800 2020</a></li>
+              <li><a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-check-square fa-2x"></i> BOOK NOW</a></li>
             </ul>
         </div>
         <div class="row">
@@ -39,8 +52,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#about">About OneDaySail</a></li>
+              <li><a href="#home" class='scroll'>Home</a></li>
+              <li><a href="#about" class='scroll'>About OneDaySail</a></li>
               <li><a href="#contact">Contact Us</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Cruises<span class="caret"></span></a>
@@ -60,6 +73,13 @@
               <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
             </ul>
           </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="collapse" id="collapseExample">
+              <div class="well book">
+                ...
+              </div>
+            </div>
         </div>
         </div><!--/.nav-collapse -->
       </div>
@@ -86,7 +106,7 @@
     
     <div class="container-fluid main">
         <div class="row">
-          
+            <a id="about" name="about"></a>
             <div class="col-md-6 col-sm-12 left-subheader">
               <img src="assets/images/transport219w.png"  style="width:100px; height:100px; position:relative; top:-50px; right: -65px; float:right;">
               <img src="assets/images/sunset-sail.jpg" style="width:100%; height:100%; border: 2px solid #ffcc33; margin: -80px 0 5px 0;">
@@ -95,7 +115,10 @@
             </div>
           
         </div>
-    </div>
+        <div class="row">
+
+        </div>
+        </div>
 <script src="js/script.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -104,5 +127,6 @@ $(document).ready(function () {
 
 });
 </script>
+
 </body>
 </html>
